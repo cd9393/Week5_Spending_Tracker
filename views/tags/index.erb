@@ -1,0 +1,12 @@
+<h1> Tags </h1>
+
+<ul>
+  <% for tag in @tags %>
+  <li>
+    <p> <%=tag.category%> </p>
+  </li>
+  <% end %>
+</ul>
+
+<form method="get" action="/tags/new">
+  <input type="submit" value="Create new Tag."/>
