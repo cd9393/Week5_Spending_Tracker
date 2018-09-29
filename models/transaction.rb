@@ -31,6 +31,12 @@ class Transaction
   #   SqlRunner.run(sql,values)
   # end
   #
+  def self.all()
+    sql = "SELECT * FROM transactions"
+    results = SqlRunner.run(sql)
+    transactions = results.map{|transaction|Transaction.new(transaction)}
+    return transactions
+  end
   def self.delete_all()
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
