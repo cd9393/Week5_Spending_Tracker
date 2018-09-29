@@ -15,6 +15,7 @@ CREATE TABLE merchants(
 CREATE TABLE transactions(
   id SERIAL8 PRIMARY KEY,
   amount DECIMAL(10,2),
+  transaction_date date,
   merchant_id INT8 REFERENCES merchants(id) ON DELETE CASCADE,
   tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE
 )
