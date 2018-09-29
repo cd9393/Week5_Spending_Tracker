@@ -47,6 +47,8 @@ class Transaction
   #   SqlRunner.run(sql,values)
   # end
   #
+
+
   def self.all()
     sql = "SELECT * FROM transactions"
     results = SqlRunner.run(sql)
@@ -60,7 +62,7 @@ class Transaction
   end
 
 
-    def self.sum()
+    def self.total()
       transactions = Transaction.all
       amount_array = transactions.map{|transaction|transaction.amount.to_f}
       total_amount= amount_array.reduce(:+)

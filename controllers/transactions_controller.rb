@@ -7,6 +7,7 @@ also_reload('../models/*')
 
 get'/transactions' do
   @transactions = Transaction.all()
+  @total_spent = Transaction.total()
   erb(:"transactions/index")
 end
 
