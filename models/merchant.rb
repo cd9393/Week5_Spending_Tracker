@@ -4,7 +4,7 @@ class Merchant
 
   attr_accessor :name
   attr_reader :id
-  
+
   def initialize(options)
     @id = options["id"].to_i if options["id"]
     @name = options["name"]
@@ -27,6 +27,14 @@ class Merchant
     sql = "DELETE FROM merchants WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql,values)
+  end
+
+  def transactions()
+    sql = " SELECT * FROM transactions where merchant_id = $1"
+    value = [@id]
+    result = SqlRunner.run(sql,value)
+    transactions = result.map{|transaction|Transaction.new(transaction)}
+    return transactions
   end
 
   def self.delete_all()
