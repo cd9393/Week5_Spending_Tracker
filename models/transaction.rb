@@ -3,7 +3,7 @@ require "date"
 
 class Transaction
 
-  attr_accessor :merchant_id, :tag_id, :amount,:transaction_date
+  attr_accessor :merchant_id, :tag_id, :amount, :transaction_date
   attr_reader :id
 
   def initialize(options)
