@@ -34,6 +34,7 @@ class Transaction
     return tag
   end
 
+
   # def update()
   #   sql = "UPDATE transactions SET (merchant_id, tag_id, amount) = ($1, $2, $3) WHERE id = $4"
   #   values = [@merchant_id, @tag_id, @amount, @id]
@@ -52,8 +53,17 @@ class Transaction
     transactions = results.map{|transaction|Transaction.new(transaction)}
     return transactions
   end
+
   def self.delete_all()
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
   end
+
+
+    def self.sum()
+      transactions = Transaction.all
+      amount_array = transactions.map{|transaction|transaction.amount.to_f}
+      total_amount= amount_array.reduce(:+)
+      return total_amount
+    end
 end
