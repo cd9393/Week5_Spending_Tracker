@@ -1,0 +1,22 @@
+<h1> Add new Transaction</h1>
+
+<form action="/transactions" method="post">
+  <label for="amount"> Amount: £</label>
+  <input id="amount" type = "number" step="0.01" name = "amount" min="0"/>
+
+  <label for="merchant-select"> Select a Merchant:</label>
+  <select id ="merchant-select" name="merchant_id">
+    <% for merchant in @merchants %>
+    <option value="<%=merchant.id%>"> <%=merchant.name%></option>
+    <%end%>
+  </select>
+
+  <label for="tag-select"> Select a Category:</label>
+  <select id ="tag-select" name="tag_id">
+    <% for tag in @tags %>
+    <option value="<%=tag.id%>"> <%=tag.category%></option>
+    <%end%>
+  </select>
+
+  <input type="submit" value="Add transaction"/>
+</form>

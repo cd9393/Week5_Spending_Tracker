@@ -3,7 +3,7 @@
 <ul>
   <% for transaction in @transactions %>
   <li>
-    <p> <%= transaction.merchant_id%>, <%= transaction.amount%>  </p>
+    <p> <%= transaction.merchant.name%>, <%= "£#{transaction.amount}"%> <%= transaction.tag.category%> </p>
   </li>
   <% end %>
 </ul>

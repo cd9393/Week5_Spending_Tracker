@@ -29,11 +29,19 @@ class Tag
     SqlRunner.run(sql,values)
   end
 
+
   def transactions()
     sql = "SELECT * FROM transactions WHERE tag_id = $1"
     values = [@id]
     transactions = SqlRunner.run(sql,values)
     result = transactions.map{|transaction| Transaction.new(transaction)}
+    return result
+  end
+
+  def self.all()
+    sql = "SELECT * FROM tags"
+    tags = SqlRunner.run(sql)
+    result = tags.map{|tag|Tag.new(tag)}
     return result
   end
 
