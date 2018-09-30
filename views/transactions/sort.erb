@@ -1,0 +1,11 @@
+<h1> Transactions </h1>
+
+<p> Total Money spent £<%=@total_spent%> </p>
+
+<ul>
+  <% for transaction in @sorted_transactions %>
+  <li>
+    <p> <%=transaction.transaction_date%> <%= transaction.merchant.name%>, <%= "£#{transaction.amount}"%> <%= transaction.tag.category%> </p>
+  </li>
+  <% end %>
+</ul>

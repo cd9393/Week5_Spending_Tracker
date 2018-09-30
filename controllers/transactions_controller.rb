@@ -22,3 +22,10 @@ post'/transactions' do
   transaction.save()
   redirect to("/transactions")
 end
+
+get '/transactions/sort' do
+  @transactions = Transaction.all()
+  @total_spent = Transaction.total()
+  @sorted_transactions = @transactions.sort_by{|transaction|transaction.transaction_date}.reverse
+  erb(:"transactions/sort")
+end
