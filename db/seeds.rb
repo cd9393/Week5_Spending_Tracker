@@ -22,15 +22,18 @@ merchant1 = Merchant.new({
       })
       merchant3.save()
 tag1 = Tag.new({
-  "category" => "Shopping"
+  "category" => "Shopping",
+  "budget" => 300
   })
 
   tag2 = Tag.new({
-    "category" => "Groceries"
+    "category" => "Groceries",
+    "budget" => 200
     })
 
     tag3 = Tag.new({
-      "category" => "Eating Out"
+      "category" => "Eating Out",
+      "budget" => 200
       })
 
   tag1.save()

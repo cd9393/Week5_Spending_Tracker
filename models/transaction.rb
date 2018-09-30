@@ -36,11 +36,14 @@ class Transaction
     return tag
   end
 
-  def self.find_by_month(month)
-    user inputs a month
-    find all transactions where date == month
-    # return an array of transactions
-  end
+  # def self.find_by_month(month)
+  #
+  # sql = " SELECT * FROM transactions WHERE transaction_date = $1"
+  # value
+  #   # user inputs a month
+  #   # find all transactions where date == month
+  #   # # return an array of transactions
+  # end
 
 
   # def update()
