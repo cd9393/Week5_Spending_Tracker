@@ -64,4 +64,10 @@ class Tag
     sql = "DELETE FROM tags"
     SqlRunner.run(sql)
   end
+
+  def self.total_budget()
+    budget_array = all.map{|tag|tag.budget.to_f}
+    total_budget = budget_array.reduce(:+)
+    return total_budget
+  end
 end
