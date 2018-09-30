@@ -40,11 +40,9 @@ class Tag
   end
 
   def money_spent()
-    sql = "SELECT transactions.amount FROM transactions WHERE tag_id = $1"
-    values = [@id]
-    amounts = SqlRunner.run(sql,values)
-    money = amounts.map{|value|value["amount"].to_i}
+    money = transactions.map{|transaction|transaction.amount.to_f}
     total = money.reduce(:+)
+    return total
   end
 
   def self.all()

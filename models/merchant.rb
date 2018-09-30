@@ -37,6 +37,12 @@ class Merchant
     return transactions
   end
 
+  def money_spent()
+    money_array = transactions.map{|transaction|transaction.amount.to_f}
+    total_spent = money_array.reduce(:+)
+    return total_spent
+  end
+
   def self.all()
     sql = "SELECT * FROM merchants"
     merchants = SqlRunner.run(sql)
