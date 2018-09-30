@@ -45,6 +45,14 @@ class Tag
     return total
   end
 
+  def check_budget()
+    if money_spent > @budget
+      return true
+    else
+      return false
+    end
+  end
+
   def self.all()
     sql = "SELECT * FROM tags"
     tags = SqlRunner.run(sql)
