@@ -3,8 +3,12 @@
 <ul>
   <% for tag in @tags %>
   <li>
-    <p> <%=tag.category%>  Budget: <%=tag.budget%></p>
+    <p>Category: <%=tag.category%></p>
+
+    <p> Monthly Budget: £<%=tag.budget%> </p>
+
   </li>
+
   <% end %>
 </ul>
 
