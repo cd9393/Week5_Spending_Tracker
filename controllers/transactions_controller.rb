@@ -9,6 +9,8 @@ get'/transactions' do
   @transactions = Transaction.all()
   @total_spent = Transaction.total()
   @sorted_transactions = @transactions.sort_by{|transaction|transaction.transaction_date}.reverse
+  @tags = Tag.all()
+  @budget = Tag.total_budget()
   erb(:"transactions/index")
 end
 
@@ -21,5 +23,12 @@ end
 post'/transactions' do
   transaction = Transaction.new(params)
   transaction.save()
+  @transactions = Transaction.all()
+  @total_spent = Transaction.total()
+  @budget = Tag.total_budget()
+  if @total_spent < @budget
   redirect to("/transactions")
+  else
+    erb(:"transactions/over_budget")
+  end 
 end
