@@ -6,9 +6,11 @@
     <p> <%=merchant.name%> </p>
     <form method="get" action="/merchants/<%=merchant.id%>">
       <input type="submit" value="View Transactions."/>
+      </form
   </li>
   <% end %>
 </ul>
 
 <form method="get" action="/merchants/new">
   <input type="submit" value="Create new Merchant."/>
+</form>

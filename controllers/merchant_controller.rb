@@ -11,8 +11,9 @@ get'/merchants' do
 end
 
 get'/merchants/:id' do
-  @merchant = Merchant.find_by_id()
+  @merchant = Merchant.find_by_id(params[:id])
   @merchant_transactions= @merchant.transactions
+  erb(:"merchants/show")
 end
 
 get'/merchants/new' do

@@ -14,6 +14,11 @@ get'/tags/new' do
   erb(:"tags/new")
 end
 
+get 'tags/:id' do
+  @tag = Tag.find_by_id(params[:id])
+  erb(:"tags/show")
+end
+
 post'/tags' do
   tag = Tag.new(params)
   tag.save()
