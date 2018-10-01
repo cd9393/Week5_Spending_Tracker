@@ -14,8 +14,9 @@ get'/tags/new' do
   erb(:"tags/new")
 end
 
-get 'tags/:id' do
+get '/tags/:id' do
   @tag = Tag.find_by_id(params[:id])
+  @tag_transactions=@tag.transactions
   erb(:"tags/show")
 end
 

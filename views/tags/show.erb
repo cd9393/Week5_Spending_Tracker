@@ -1,0 +1,10 @@
+<h1> <%= @tag.category%> Transactions </h1>
+
+
+<ul>
+  <% for transaction in @tag_transactions %>
+  <li>
+    <p> <%=transaction.transaction_date%> <%= transaction.merchant.name%>, <%= "£#{transaction.amount}"%> <%= transaction.tag.category%> </p>
+  </li>
+  <% end %>
+</ul>

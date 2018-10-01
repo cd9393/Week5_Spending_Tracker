@@ -7,6 +7,10 @@
 
     <p> Monthly Budget: £<%=tag.budget%> </p>
 
+    <form method="get" action="/tags/<%=tag.id%>">
+      <input type="submit" value="View Transactions."/>
+    </form>
+
   </li>
 
   <% end %>
@@ -14,3 +18,4 @@
 
 <form method="get" action="/tags/new">
   <input type="submit" value="Create new Tag."/>
+</form>
