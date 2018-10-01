@@ -1,0 +1,9 @@
+
+
+<ul>
+  <% for transaction in @transactions %>
+  <li>
+    <p> <%=transaction.transaction_date%> <%= transaction.merchant.name%>, <%= "£#{transaction.amount}"%> <%= transaction.tag.category%> </p>
+  </li>
+  <% end %>
+</ul>

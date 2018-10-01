@@ -59,9 +59,9 @@ class Transaction
   # end
   #
 
-  def self.find_by_date(month,year)
-    sql = "SELECT * FROM transactions WHERE EXTRACT(MONTH FROM transaction_date) = $1 AND EXTRACT(YEAR FROM transaction_date) = $2"
-    values = [month,year]
+  def self.find_by_date(month)
+    sql = "SELECT * FROM transactions WHERE EXTRACT(MONTH FROM transaction_date) = $1"
+    values = [month]
     result = SqlRunner.run(sql,values)
     transactions = result.map{|transaction|Transaction.new(transaction)}
     return transactions

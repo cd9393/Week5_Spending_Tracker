@@ -2,6 +2,13 @@
 
 <p> Total Money spent £<%=@total_spent.round(2)%>     Monthly Budget: £<%=@budget%>   Budget Remaining: £<%= (@budget- @total_spent).round(2)%></p>
 
+<form method="post" action="/transactions/date">
+  <label for="date-select">FILTER BY DATE:</label>
+  <input id="filter-date" type="month" name="filter-date"/>
+
+  <input type="submit" value="Filter by date."/>
+</form>
+
 <ul>
   <% for transaction in @sorted_transactions %>
   <li>
@@ -13,6 +20,8 @@
 <form method="get" action="/transactions/new">
   <input type="submit" value="Create new Transaction."/>
 </form>
+
+
 
   <!-- <form method="get" action="/transactions/sort">
     <input type="submit" value="Sort Transactions."/>

@@ -32,3 +32,10 @@ post'/transactions' do
     erb(:"transactions/over_budget")
   end
 end
+
+post'/transactions/date' do
+  @date = Date.strptime(params["filter-date"],"%Y-%m")
+  month = @date.month
+  @transactions = Transaction.find_by_date(month)
+  erb(:"transactions/dates")
+end
