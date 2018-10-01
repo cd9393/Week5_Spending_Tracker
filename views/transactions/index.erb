@@ -1,6 +1,6 @@
 <h1> Transactions </h1>
 
-<p> Total Money spent £<%=@total_spent%>     Monthly Budget: £<%=@budget%>   Budget Remaining: £<%= @budget- @total_spent%></p>
+<p> Total Money spent £<%=@total_spent.round(2)%>     Monthly Budget: £<%=@budget%>   Budget Remaining: £<%= (@budget- @total_spent).round(2)%></p>
 
 <ul>
   <% for transaction in @sorted_transactions %>

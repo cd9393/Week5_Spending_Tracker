@@ -10,6 +10,11 @@ get'/merchants' do
   erb(:"merchants/index")
 end
 
+get'/merchants/:id' do
+  @merchant = Merchant.find_by_id()
+  @merchant_transactions= @merchant.transactions
+end
+
 get'/merchants/new' do
   erb(:"merchants/new")
 end

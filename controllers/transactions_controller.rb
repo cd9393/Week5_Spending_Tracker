@@ -30,5 +30,5 @@ post'/transactions' do
   redirect to("/transactions")
   else
     erb(:"transactions/over_budget")
-  end 
+  end
 end

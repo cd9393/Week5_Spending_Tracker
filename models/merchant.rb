@@ -43,6 +43,14 @@ class Merchant
     return total_spent
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM merchants WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql,values).first
+    merchant =   Merchant.new(result)
+    return merchant
+  end
+
   def self.all()
     sql = "SELECT * FROM merchants"
     merchants = SqlRunner.run(sql)
