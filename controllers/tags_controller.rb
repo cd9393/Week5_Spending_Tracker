@@ -14,6 +14,12 @@ get'/tags/new' do
   erb(:"tags/new")
 end
 
+get '/tags/summary' do
+  @tags = Tag.all()
+  @monthly_spend=Transaction.this_month_spend
+  erb(:"tags/summary")
+end
+
 get '/tags/:id' do
   @tag = Tag.find_by_id(params[:id])
   @tag_transactions=@tag.transactions

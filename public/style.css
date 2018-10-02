@@ -1,6 +1,14 @@
 body{
   background-color:#eaf3f9;
+
 }
+
+
+.circle-container{
+  display: flex;
+  justify-content: center;
+}
+
 .header{
   display:flex;
   justify-content:center;
@@ -12,8 +20,40 @@ body{
 }
 
 .banner{
-  background-color:#00efd1;
+  background-color:#0adbae;
 }
+
+.budget{
+  display:flex;
+  justify-content:space-around;
+  border-radius: 5%;
+  width: 90%;
+  height:450px;
+  background-color:#0adbae;
+}
+.budget h1{
+  color:#637383;
+}
+
+.budget p{
+  color:#637383;
+  font-size:20pt;
+}
+
+#spent{
+  color:red;
+  font-size: 20pt;
+}
+#available{
+  color: white;
+  font-size: 20pt;
+}
+#target{
+  color:white;
+  font-size:20pt;
+}
+
+
 .floating-menu{
   display:flex;
   justify-content:flex-end;
@@ -38,10 +78,55 @@ padding: 10px;
 .floating-menu li a{
   color:#637383;
   text-decoration:none;
+  padding:10px;
 }
 
 .floating-menu li a:hover,a:active{
-  background-color:black;
+  background-color:#0adbae;
   color:white;
   border-bottom:1px black;
+}
+
+p {
+  text-align: center;
+  color:#ffffff;
+  font-size:16pt;
+}
+
+.padding-center {
+  padding-top: 15pt;
+
+}
+
+.monthly_transactions ul {
+  padding-top:30px;
+  padding-bottom: 20px;
+  display: flex;
+justify-content: space-between;
+list-style-type: none;
+border-bottom: 2px dotted #637383;
+
+}
+.monthly_transactions li{
+  color :#45517f;
+  font-size:20pt;
+}
+
+.title-container{
+  display:flex;
+  justify-content:center;
+}
+.title-container h1{
+  color :#45517f;
+}
+
+#title {
+  padding-top:30px;
+  padding-bottom: 20px;
+  display: flex;
+justify-content: space-between;
+list-style-type: none;
+background-color:#0adbae;
+font-size:20pt;
+color :#45517f;
 }

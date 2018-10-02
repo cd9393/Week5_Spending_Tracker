@@ -2,7 +2,6 @@
 <h1> Transactions </h1>
 </div>
 
-<p> Total Money spent £<%=@total_spent.round(2)%>     Monthly Budget: £<%=@budget%>   Budget Remaining: £<%= (@budget- @total_spent).round(2)%></p>
 
 <form method="post" action="/transactions/date">
   <label for="date-select">FILTER BY DATE:</label>
@@ -11,17 +10,15 @@
   <input type="submit" value="Filter by date."/>
 </form>
 
-<ul>
-  <% for transaction in @sorted_transactions %>
-  <li>
-    <ul class="transactions">
-      <li><%=transaction.transaction_date%></li>
-      <li><%= transaction.merchant.name%></li>
-      <li><%= "£#{transaction.amount}"%></li>
-    </ul>
-  </li>
-  <% end %>
-</ul>
+<div class="monthly_transactions">
+  <% for transaction in @sorted_transactions%>
+    <ul>
+    <li><%=transaction.transaction_date%></li>
+    <li><%= transaction.merchant.name%></li>
+    <li><%= "£#{transaction.amount}"%></li>
+  </ul>
+  <%end%>
+</div>
 
 <form method="get" action="/transactions/new">
   <input type="submit" value="Create new Transaction."/>

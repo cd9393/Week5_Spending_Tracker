@@ -1,20 +1,33 @@
 
-<div class="banner">
-  <br>
-  <br>
-</div>
 
 <div class="header">
   <h1> Welcome User, View your monthly summary below</h1>
 </div>
 
+<div class="circle-container">
+
 
 <div class="budget">
-  <h1> Overview:</h1>
+  <div class="vertical-align">
+  <h1 class="padding-center"> Overview:</h1>
   <p> Budget:</p>
-  <p> £<%=@budget%></p>
+  <p id="target"> £<%=@budget%></p>
   <p> Spent:</p>
-  <p>£<%=@monthly_spend.round(2)%></p>
-  <p>£<%=@remaining.round(2)%></p>
+  <p id ="spent">£<%=@monthly_spend.round(2)%></p>
+  <p>Available:</p>
+  <p id="available">£<%=@remaining.round(2)%></p>
+</div>
 
+</div>
+
+</div>
+
+<div class="monthly_transactions">
+  <% for transaction in @monthly_transactions%>
+    <ul>
+    <li><%=transaction.transaction_date%></li>
+    <li><%= transaction.merchant.name%></li>
+    <li><%= "£#{transaction.amount}"%></li>
+  </ul>
+  <%end%>
 </div>

@@ -1,21 +1,16 @@
-<h1> Tags </h1>
+<div class="title-container">
+  <h1> Tags </h1>
+</div>
 
-<ul>
-  <% for tag in @tags %>
-  <li>
-    <p>Category: <%=tag.category%></p>
 
-    <p> Monthly Budget: £<%=tag.budget%> </p>
-
-    <form method="get" action="/tags/<%=tag.id%>">
-      <input type="submit" value="View Transactions."/>
-    </form>
-
-  </li>
-
-  <% end %>
-</ul>
-
+<div class="monthly_transactions">
+  <% for tag in @tags%>
+    <ul>
+    <li>Category : <%=tag.category%></li>
+    <li>Monthly Budget: £<%= tag.budget%></li>
+  </ul>
+  <%end%>
+</div>
 <form method="get" action="/tags/new">
   <input type="submit" value="Create new Tag."/>
 </form>

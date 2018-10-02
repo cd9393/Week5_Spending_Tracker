@@ -1,15 +1,18 @@
+<div class="title-container">
 <h1> Merchants </h1>
+</div>
 
-<ul>
-  <% for merchant in @merchants %>
-  <li>
-    <p> <%=merchant.name%> </p>
-    <form method="get" action="/merchants/<%=merchant.id%>">
-      <input type="submit" value="View Transactions."/>
-    </form>
-  </li>
-  <% end %>
-</ul>
+
+<div class="monthly_transactions">
+  <% for merchant in @merchants%>
+    <ul>
+    <li><%=merchant.name%></li>
+    <li>  <form method="get" action="/merchants/<%=merchant.id%>">
+        <input type="submit" value="View Transactions."/></form></li>
+
+  </ul>
+  <%end%>
+</div>
 
 <form method="get" action="/merchants/new">
   <input type="submit" value="Create new Merchant."/>

@@ -1,0 +1,20 @@
+<div class="title-container">
+<h1>Summary </h1>
+</div>
+
+<div>
+<ul id = "title">
+  <li>Spending </li>
+  <li> Total Spent: £<%=@monthly_spend%></li>
+</ul>
+</div>
+
+
+<div class="monthly_transactions">
+<% for tag in @tags%>
+    <ul>
+    <li>Category: <%=tag.category%></li>
+    <li> £<%= tag.sum_transactions_this_month%></li>
+  </ul>
+  <%end%>
+</div>

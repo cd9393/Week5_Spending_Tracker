@@ -32,12 +32,20 @@ class Tag
 
 
   def transactions()
-    sql = "SELECT * FROM transactions WHERE tag_id = $1"
+    sql = "SELECT * FROM transactions WHERE tag_id = $1 AND "
     values = [@id]
     transactions = SqlRunner.run(sql,values)
     result = transactions.map{|transaction| Transaction.new(transaction)}
     return result
   end
+
+  def sum_transactions_this_month()
+    sql = "SELECT SUM (amount) FROM transactions WHERE tag_id = $1 AND date_part('month',transaction_date) = date_part('month',CURRENT_DATE) AND date_part('year',transaction_date) = date_part('year',CURRENT_DATE)"
+    values = [@id]
+    result = SqlRunner.run(sql,values)
+    return result[0]["sum"].to_f
+  end
+
 
   def money_spent()
     money = transactions.map{|transaction|transaction.amount.to_f}
@@ -52,6 +60,7 @@ class Tag
       return false
     end
   end
+
 
   def self.find_by_id(id)
     sql = "SELECT * FROM tags WHERE id = $1"
