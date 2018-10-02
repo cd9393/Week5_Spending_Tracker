@@ -1,0 +1,47 @@
+body{
+  background-color:#eaf3f9;
+}
+.header{
+  display:flex;
+  justify-content:center;
+}
+
+.header h1{
+  color:#637383;
+  font-family:sans-serif;
+}
+
+.banner{
+  background-color:#00efd1;
+}
+.floating-menu{
+  display:flex;
+  justify-content:flex-end;
+  font-family:sans-serif;
+  padding: 10px;
+
+}
+
+.floating-menu ul{
+list-style-type:none ;
+margin:0;
+padding:0;
+}
+
+.floating-menu li{
+  display:inline-flex;
+justify-content:space-between;
+padding: 10px;
+
+}
+
+.floating-menu li a{
+  color:#637383;
+  text-decoration:none;
+}
+
+.floating-menu li a:hover,a:active{
+  background-color:black;
+  color:white;
+  border-bottom:1px black;
+}

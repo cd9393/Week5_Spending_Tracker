@@ -36,6 +36,7 @@ end
 post'/transactions/date' do
   @date = Date.strptime(params["filter-date"],"%Y-%m")
   month = @date.month
-  @transactions = Transaction.find_by_date(month)
+  year = @date.year
+  @transactions = Transaction.find_by_date(month,year)
   erb(:"transactions/dates")
 end

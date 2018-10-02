@@ -1,4 +1,9 @@
 
+<form method="post" action="/transactions/date">
+  <label for="date-select">FILTER BY DATE:</label>
+  <input id="filter-date" type="month" name="filter-date"/>
+  <input type="submit" value="Filter by date."/>
+</form>
 
 <ul>
   <% for transaction in @transactions %>

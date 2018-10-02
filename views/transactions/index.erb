@@ -1,4 +1,6 @@
+<div class="title-container">
 <h1> Transactions </h1>
+</div>
 
 <p> Total Money spent £<%=@total_spent.round(2)%>     Monthly Budget: £<%=@budget%>   Budget Remaining: £<%= (@budget- @total_spent).round(2)%></p>
 
@@ -12,7 +14,11 @@
 <ul>
   <% for transaction in @sorted_transactions %>
   <li>
-    <p> <%=transaction.transaction_date%> <%= transaction.merchant.name%>, <%= "£#{transaction.amount}"%> <%= transaction.tag.category%> </p>
+    <ul class="transactions">
+      <li><%=transaction.transaction_date%></li>
+      <li><%= transaction.merchant.name%></li>
+      <li><%= "£#{transaction.amount}"%></li>
+    </ul>
   </li>
   <% end %>
 </ul>

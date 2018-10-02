@@ -59,9 +59,15 @@ class Transaction
   # end
   #
 
-  def self.find_by_date(month)
-    sql = "SELECT * FROM transactions WHERE EXTRACT(MONTH FROM transaction_date) = $1"
-    values = [month]
+  def self.this_month_spend()
+    sql = "SELECT SUM (amount) FROM TRANSACTIONS WHERE date_part('month',transaction_date) = date_part('month',CURRENT_DATE) AND date_part('year',transaction_date) = date_part('year',CURRENT_DATE)"
+    result = SqlRunner.run(sql)
+    return result[0]["sum"].to_f
+  end
+
+  def self.find_by_date(month,year)
+    sql = "SELECT * FROM transactions WHERE EXTRACT(MONTH FROM transaction_date) = $1 AND EXTRACT(YEAR FROM transaction_date) = $2"
+    values = [month,year]
     result = SqlRunner.run(sql,values)
     transactions = result.map{|transaction|Transaction.new(transaction)}
     return transactions

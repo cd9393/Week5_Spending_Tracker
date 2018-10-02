@@ -61,8 +61,16 @@ tag1 = Tag.new({
         "transaction_date" => "01-08-2018"
         })
 
+        transaction4 = Transaction.new({
+          "amount" => 2.75,
+          "merchant_id" => merchant3.id,
+          "tag_id" => tag3.id,
+          "transaction_date" => "01-10-2018"
+          })
+
   transaction1.save()
   transaction2.save()
   transaction3.save()
+  transaction4.save()
 binding.pry
 nil
