@@ -184,6 +184,7 @@ input[type=submit]{
 }
 
 form {
+  padding-top:50px;
   display:flex;
   width:100%;
   justify-content:space-between;
@@ -191,6 +192,10 @@ form {
   font-size:14pt;
   color :#45517f;
 
+}
+
+form.button{
+  padding:0;
 }
 
 .merchant {
@@ -202,3 +207,24 @@ form {
     color :#45517f;
 
   }
+
+
+  .tag {
+  padding-top:50px;
+      display:flex;
+      justify-content:space-around;
+      font-family: 'Titillium Web', sans-serif;
+      font-size:14pt;
+      color :#45517f;
+
+    }
+
+    .date {
+    padding-top:50px;
+        display:flex;
+        justify-content:flex-end;
+        font-family: 'Titillium Web', sans-serif;
+        font-size:14pt;
+        color :#45517f;
+
+      }

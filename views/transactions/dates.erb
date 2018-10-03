@@ -2,7 +2,7 @@
   <h1> <%=@transactions[0].transaction_date.strftime("%B")%>  Transactions </h1>
 </div>
 
-<form method="post" action="/transactions/date">
+<form class="date" method="post" action="/transactions/date">
   <label for="date-select">FILTER BY DATE:</label>
   <input id="filter-date" type="month" name="filter-date"/>
   <input type="submit" value="Filter by date."/>

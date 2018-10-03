@@ -10,7 +10,7 @@
   <% for merchant in @merchants%>
   <ul>
     <li><%=merchant.name%></li>
-    <li>  <form method="get" action="/merchants/<%=merchant.id%>">
+    <li>  <form class="button"method="get" action="/merchants/<%=merchant.id%>">
       <input type="submit" value="View Transactions."/></form></li>
 
     </ul>
