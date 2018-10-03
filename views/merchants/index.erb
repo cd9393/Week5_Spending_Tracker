@@ -1,5 +1,5 @@
 <div class="title-container">
-<h1> Merchants </h1>
+  <h1> Merchants </h1>
 </div>
 
 <form method="get" action="/merchants/new">
@@ -8,11 +8,11 @@
 
 <div class="monthly_transactions">
   <% for merchant in @merchants%>
-    <ul>
+  <ul>
     <li><%=merchant.name%></li>
     <li>  <form method="get" action="/merchants/<%=merchant.id%>">
-        <input type="submit" value="View Transactions."/></form></li>
+      <input type="submit" value="View Transactions."/></form></li>
 
-  </ul>
-  <%end%>
-</div>
+    </ul>
+    <%end%>
+  </div>

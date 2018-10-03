@@ -1,26 +1,26 @@
 <div class="title-container">
-<h1> Transactions </h1>
+  <h1> Transactions </h1>
 </div>
 
 <div class="form">
 
-<form method="get" action="/transactions/new">
-  <input type="submit" value="Create new Transaction."/>
-</form>
+  <form method="get" action="/transactions/new">
+    <input type="submit" value="Create new Transaction."/>
+  </form>
 
 
-<form method="post" action="/transactions/date">
-  <label for="date-select">FILTER BY DATE:</label>
-  <input id="filter-date" type="month" name="filter-date"/>
-  <input type="submit" value="Filter by date."/>
-</form>
+  <form method="post" action="/transactions/date">
+    <label for="date-select">FILTER BY DATE:</label>
+    <input id="filter-date" type="month" name="filter-date"/>
+    <input type="submit" value="Filter by date."/>
+  </form>
 
 </div>
 
 
 <div class="monthly_transactions">
   <% for transaction in @sorted_transactions%>
-    <ul>
+  <ul>
     <li><%=transaction.transaction_date.strftime("%a - %d %B")%></li>
     <li><%= transaction.merchant.name%></li>
     <li><%= "£#{transaction.amount}"%></li>
@@ -31,6 +31,6 @@
 
 
 
-  <!-- <form method="get" action="/transactions/sort">
-    <input type="submit" value="Sort Transactions."/>
-  </form> -->
+<!-- <form method="get" action="/transactions/sort">
+<input type="submit" value="Sort Transactions."/>
+</form> -->

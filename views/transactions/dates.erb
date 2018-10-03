@@ -1,5 +1,5 @@
 <div class="title-container">
-<h1> <%=@transactions[0].transaction_date.strftime("%B")%>  Transactions </h1>
+  <h1> <%=@transactions[0].transaction_date.strftime("%B")%>  Transactions </h1>
 </div>
 
 <form method="post" action="/transactions/date">
@@ -10,7 +10,7 @@
 
 <div class="monthly_transactions">
   <% for transaction in @sorted_transactions%>
-    <ul>
+  <ul>
     <li><%=transaction.transaction_date.strftime("%a - %d %B")%></li>
     <li><%= transaction.merchant.name%></li>
     <li><%= "£#{transaction.amount}"%></li>

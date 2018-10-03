@@ -27,7 +27,7 @@ post'/transactions' do
   @total_spent = Transaction.total()
   @budget = Tag.total_budget()
   if @total_spent < @budget
-  redirect to("/transactions")
+    redirect to("/transactions")
   else
     erb(:"transactions/over_budget")
   end
@@ -38,6 +38,6 @@ post'/transactions/date' do
   month = @date.month
   year = @date.year
   @transactions = Transaction.find_by_date(month,year)
-    @sorted_transactions = @transactions.sort_by{|transaction|transaction.transaction_date}.reverse
+  @sorted_transactions = @transactions.sort_by{|transaction|transaction.transaction_date}.reverse
   erb(:"transactions/dates")
 end

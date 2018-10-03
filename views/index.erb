@@ -7,24 +7,24 @@
 <div class="circle-container">
 
 
-<div class="budget">
-  <div class="vertical-align">
-  <h1 class="padding-center"> Overview:</h1>
-  <p> Budget:</p>
-  <p id="target"> £<%=@budget%></p>
-  <p> Spent:</p>
-  <p id ="spent">£<%=@monthly_spend.round(2)%></p>
-  <p>Available:</p>
-  <p id="available">£<%=@remaining.round(2)%></p>
-</div>
+  <div class="budget">
+    <div class="vertical-align">
+      <h1 class="padding-center"> Overview:</h1>
+      <p> Budget:</p>
+      <p id="target"> £<%=@budget%></p>
+      <p> Spent:</p>
+      <p id ="spent">£<%=@monthly_spend.round(2)%></p>
+      <p>Available:</p>
+      <p id="available">£<%=@remaining.round(2)%></p>
+    </div>
 
-</div>
+  </div>
 
 </div>
 
 <div class="monthly_transactions">
   <% for transaction in @sorted_transactions%>
-    <ul>
+  <ul>
     <li><%=transaction.transaction_date.strftime("%a - %d %B")%></li>
     <li><%= transaction.merchant.name%></li>
     <li><%= "£#{transaction.amount}"%></li>

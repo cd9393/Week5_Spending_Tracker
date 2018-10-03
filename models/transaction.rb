@@ -94,10 +94,10 @@ class Transaction
   end
 
 
-    def self.total()
-      transactions = Transaction.all
-      amount_array = transactions.map{|transaction|transaction.amount.to_f}
-      total_amount= amount_array.reduce(:+)
-      return total_amount
-    end
+  def self.total()
+    transactions = Transaction.all
+    amount_array = transactions.map{|transaction|transaction.amount.to_f}
+    total_amount= amount_array.reduce(:+)
+    return total_amount
+  end
 end

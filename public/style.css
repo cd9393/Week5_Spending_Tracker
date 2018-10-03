@@ -192,3 +192,13 @@ form {
   color :#45517f;
 
 }
+
+.merchant {
+  padding-top:50px;
+    display:flex;
+    justify-content:space-around;
+    font-family: 'Titillium Web', sans-serif;
+    font-size:14pt;
+    color :#45517f;
+
+  }

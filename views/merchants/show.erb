@@ -1,11 +1,11 @@
 <div class="title-container">
-<h1> <%=@merchant.name%> Transactions </h1>
+  <h1> <%=@merchant.name%> Transactions </h1>
 </div>
 
 
 <div class="monthly_transactions">
   <% for transaction in @sorted_transactions%>
-    <ul>
+  <ul>
     <li><%=transaction.transaction_date.strftime("%a - %d %B")%></li>
     <li><%= transaction.merchant.name%></li>
     <li><%= "£#{transaction.amount}"%></li>
