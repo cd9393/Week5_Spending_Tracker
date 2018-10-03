@@ -13,6 +13,7 @@ end
 get'/merchants/:id' do
   @merchant = Merchant.find_by_id(params[:id])
   @merchant_transactions= @merchant.transactions
+  @sorted_transactions = @merchant_transactions.sort_by{|transaction|transaction.transaction_date}.reverse
   erb(:"merchants/show")
 end
 
