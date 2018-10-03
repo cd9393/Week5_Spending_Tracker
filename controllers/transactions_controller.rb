@@ -38,5 +38,6 @@ post'/transactions/date' do
   month = @date.month
   year = @date.year
   @transactions = Transaction.find_by_date(month,year)
+    @sorted_transactions = @transactions.sort_by{|transaction|transaction.transaction_date}.reverse
   erb(:"transactions/dates")
 end

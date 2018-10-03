@@ -1,3 +1,6 @@
+<div class="title-container">
+<h1> <%=@transactions[0].transaction_date.strftime("%B")%>  Transactions </h1>
+</div>
 
 <form method="post" action="/transactions/date">
   <label for="date-select">FILTER BY DATE:</label>
@@ -6,9 +9,9 @@
 </form>
 
 <div class="monthly_transactions">
-  <% for transaction in @transactions%>
+  <% for transaction in @sorted_transactions%>
     <ul>
-    <li><%=transaction.transaction_date%></li>
+    <li><%=transaction.transaction_date.strftime("%A - %d %B")%></li>
     <li><%= transaction.merchant.name%></li>
     <li><%= "£#{transaction.amount}"%></li>
   </ul>

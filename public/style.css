@@ -130,3 +130,27 @@ background-color:#0adbae;
 font-size:20pt;
 color :#45517f;
 }
+
+.pie {ß
+  display: inline-block;
+  width: 3.75em;
+  height: 3.75em;
+  border-radius: 50%;
+  border: .15em solid #fff;
+  box-shadow: 0 .075em .2em .05em rgba(0,0,0,.25);
+  background-origin: border-box;
+}
+
+.pie{
+  background-image: conic-gradient(
+    white calc(3.6deg * var(--segment1,100)),
+    #fc3 calc(3.6deg * var(--segment1,100)),
+    #fc3 calc(3.6deg * var(--segment2,100)),
+    black calc(3.6deg * var(--segment2,100)),
+    black calc(3.6deg * var(--segment3,100)),
+    aqua calc(3.6deg * var(--segment3,100)),
+    aqua calc(3.6deg * var(--segment4,100)),
+    #ac0 0
+  );
+
+}
