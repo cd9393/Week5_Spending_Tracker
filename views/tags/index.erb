@@ -2,6 +2,10 @@
   <h1> Tags </h1>
 </div>
 
+<form method="get" action="/tags/new">
+  <input class="submit" type="submit" value="Create new Tag."/>
+</form>
+
 
 <div class="monthly_transactions">
   <% for tag in @tags%>
@@ -11,6 +15,3 @@
   </ul>
   <%end%>
 </div>
-<form method="get" action="/tags/new">
-  <input type="submit" value="Create new Tag."/>
-</form>

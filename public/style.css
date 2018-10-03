@@ -16,7 +16,7 @@ body{
 
 .header h1{
   color:#637383;
-  font-family:sans-serif;
+font-family: 'Titillium Web', sans-serif;
 }
 
 .banner{
@@ -32,23 +32,29 @@ body{
   background-color:#0adbae;
 }
 .budget h1{
+  font-family: 'Titillium Web', sans-serif;
   color:#637383;
 }
 
 .budget p{
+  font-family: 'Titillium Web', sans-serif;
   color:#637383;
   font-size:20pt;
+  margin:10px;
 }
 
 #spent{
+  margin:0;
   color:red;
   font-size: 20pt;
 }
 #available{
+  margin:0;
   color: white;
   font-size: 20pt;
 }
 #target{
+  margin:0;
   color:white;
   font-size:20pt;
 }
@@ -57,7 +63,7 @@ body{
 .floating-menu{
   display:flex;
   justify-content:flex-end;
-  font-family:sans-serif;
+font-family: 'Titillium Web', sans-serif;
   padding: 10px;
 
 }
@@ -94,12 +100,12 @@ p {
 }
 
 .padding-center {
-  padding-top: 15pt;
+  padding-top: 0pt;
 
 }
 
 .monthly_transactions ul {
-  padding-top:30px;
+  padding-top:10px;
   padding-bottom: 20px;
   display: flex;
 justify-content: space-between;
@@ -108,6 +114,7 @@ border-bottom: 2px dotted #637383;
 
 }
 .monthly_transactions li{
+font-family: 'Titillium Web', sans-serif;
   color :#45517f;
   font-size:20pt;
 }
@@ -117,11 +124,12 @@ border-bottom: 2px dotted #637383;
   justify-content:center;
 }
 .title-container h1{
+  font-family: 'Titillium Web', sans-serif;
   color :#45517f;
 }
 
 #title {
-  padding-top:30px;
+  padding-top:20px;
   padding-bottom: 20px;
   display: flex;
 justify-content: space-between;
@@ -152,5 +160,35 @@ color :#45517f;
     aqua calc(3.6deg * var(--segment4,100)),
     #ac0 0
   );
+
+}
+
+.form{
+  display:inline-flex;
+  justify-content:space-between;
+  width:100%;
+  padding-bottom:10px;
+  border-bottom: 2px dotted #637383;
+}
+
+.summary ul li{
+  padding:5px;
+}
+
+input[type=submit]{
+  width:200px;
+  background-color:#0adbae;
+  font-family: 'Titillium Web', sans-serif;
+  font-size:11pt;
+  color :#45517f;
+}
+
+form {
+  display:flex;
+  width:100%;
+  justify-content:space-between;
+  font-family: 'Titillium Web', sans-serif;
+  font-size:14pt;
+  color :#45517f;
 
 }
