@@ -117,6 +117,14 @@ border-bottom: 2px dotted #637383;
 font-family: 'Titillium Web', sans-serif;
   color :#45517f;
   font-size:20pt;
+  text-decoration:none;
+}
+
+.monthly_transactions li a{
+  font-family: 'Titillium Web', sans-serif;
+    color :#45517f;
+    font-size:20pt;
+  text-decoration: none;
 }
 
 .title-container{

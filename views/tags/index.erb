@@ -10,7 +10,7 @@
 <div class="monthly_transactions">
   <% for tag in @tags%>
   <ul>
-    <li>Category : <%=tag.category%></li>
+    <li>Category : <a href='/tags/<%=tag.id%>/edit'><%=tag.category%></a></li>
     <li>Monthly Budget: £<%= tag.budget%></li>
   </ul>
   <%end%>

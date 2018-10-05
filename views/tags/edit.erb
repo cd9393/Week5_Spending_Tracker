@@ -1,0 +1,18 @@
+<div class="title-container">
+  <h1> Edit Tag Details </h1>
+</div>
+
+<form class="tag" action="/tags/<%=@tag.id%>/edit" method="post">
+
+  <label for="category"> Category: </label>
+  <input id="category" type = "text" name = "category" value = "<%=@tag.category%>"/>
+
+  <label for="budget"> Monthly Budget:</label>
+  <input id="budget" type="number" name="budget" min="0" value= "<%=@tag.budget%>"/>
+
+  <input type="submit" value="Update Tag"/>
+</form>
+
+<form method="post" action="/tags/<%=@tag.id%>/delete">
+<input type="submit" value="Delete Tag."/>
+</form>

@@ -56,7 +56,7 @@ class Transaction
   #   sql = "DELETE FROM transactions WHERE id = $1"
   #   values = [@id]
   #   SqlRunner.run(sql,values)
-  # end
+  # end 
   #
 
   def self.this_month_spend()

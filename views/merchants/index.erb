@@ -9,7 +9,7 @@
 <div class="monthly_transactions">
   <% for merchant in @merchants%>
   <ul>
-    <li><%=merchant.name%></li>
+    <li><a href="/merchants/<%=merchant.id%>/edit"><%=merchant.name%></a></li>
     <li>  <form class="button"method="get" action="/merchants/<%=merchant.id%>">
       <input type="submit" value="View Transactions."/></form></li>
 
